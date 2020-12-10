@@ -15,7 +15,7 @@
 first_day = float(input("Сколько км пробежал спортсмен в первый день?: "))
 desired_result = float(input("Сколько км должен пробежать спортсмен?: "))
 
-day_num = 0
+day_num = 1
 
 while desired_result >= first_day:
     print(f"{day_num}-й день: {first_day:.2f}")
