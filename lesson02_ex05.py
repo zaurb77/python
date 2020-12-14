@@ -6,3 +6,35 @@
 # Пользователь ввел число 8. Результат: 8, 7, 5, 3, 3, 2.
 # Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
+
+
+# ============== БЕЗ ЦИКЛА ============== #
+my_list = [7, 5, 3, 3, 2]
+print("Начальный список: ", my_list)
+user_value = int(input("Введите значение: "))
+for index in range(len(my_list)):
+    if my_list[index] < user_value:
+        my_list.insert(index, user_value)
+        break
+    else:
+        continue
+    my_list.append(user_value)
+print("Новый список: ", my_list)
+
+
+# ============== С ЦИКЛОМ ============== #
+my_list = [7, 5, 3, 3, 2]
+print("Начальный список: ", my_list)
+while True:
+    print("Новый список: ", my_list)
+    user_value = int(input("Введите значение: "))
+    flag = False
+    for index in range(len(my_list)):
+        if my_list[index] < user_value:
+            my_list.insert(index, user_value)
+            flag = True  # вставлен новый элемент
+            break
+        else:
+            continue
+    if flag is False:  # новый элемент не вставлен
+        my_list.append(user_value)
