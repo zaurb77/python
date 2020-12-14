@@ -20,10 +20,10 @@
 
 # Создаем меню
 menu = {
-    1: "Ввести новый товар",
-    2: "Просмотреть структуру",
-    3: "Вывести аналитику",
-    4: "Выйти из программы"
+    1: "Ввести новый товар", # insert new item
+    2: "Просмотреть структуру", # see structure
+    3: "Вывести аналитику", # show stats
+    4: "Выйти из программы" # exit
 }
 
 # Создаем структуру items
@@ -53,20 +53,16 @@ while True:
                 print(i)
         else:
             while True:
-                # tmp_list = list(item)
-                # tmp_list[0] += 1
-                # for key in item_specs:
-                #     print(f"Введите {key.upper()}: ")
-                #     item_specs[key] = input()
-                # item = tuple(tmp_list)
-                # item_no += 1
                 tmp_list = list(item)
                 tmp_list[0] += 1
 
                 for key in item_specs:
                     print(f"Введите {key.upper()}: ")
                     item_specs[key] = input()
-                tmp_list[1] = item_specs
+                a = dict()                                              # создаем новый словарь
+                for key in item_specs:
+                    a[key] = item_specs[key]
+                tmp_list[1] = a
                 item = tuple(tmp_list)
                 print(item)
                 goods.insert(item_no, item)
@@ -77,18 +73,12 @@ while True:
                     continue
                 else:
                     break
-        # print(goods)
-
     elif user_choice == 4:
         print("Выход из программы...")
         break
     else:
         print("Неверное значение, попробуйте еще раз...")
         continue
-
-# Создаем структуру
-# item_no = 1
-# item_specs = {"Description": "", "price": 0, "quantity": 0, "uom": "pcs"}
 
 
 # =============== ЦИКЛ ================#
